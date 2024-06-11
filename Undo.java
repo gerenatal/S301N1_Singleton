@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Undo {
 
     private static Undo instance;
-    private ArrayList<String> commands;
+    private final ArrayList<String> commands;
 
     private Undo(){
         commands = new ArrayList<>();
@@ -19,7 +19,7 @@ public class Undo {
 
     public void eraseLastCommand() {
         if (!commands.isEmpty()) {
-            commands.remove(commands.size() - 1);
+            commands.removeLast();
         }
     }
 
